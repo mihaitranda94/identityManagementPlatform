@@ -1,0 +1,280 @@
+[
+  {
+ "model": "auth.group",
+ "pk": 1,
+ "fields": {
+  "name": "approver",
+  "permissions": []
+ }
+},
+	{
+		"model": "contenttypes.contenttype",
+		"pk": 7,
+		"fields": {
+			"app_label": "river",
+			"model": "function"
+		}
+	},
+	{
+		"model": "contenttypes.contenttype",
+		"pk": 8,
+		"fields": {
+			"app_label": "river",
+			"model": "onapprovedhook"
+		}
+	},
+	{
+		"model": "contenttypes.contenttype",
+		"pk": 9,
+		"fields": {
+			"app_label": "river",
+			"model": "oncompletehook"
+		}
+	},
+	{
+		"model": "contenttypes.contenttype",
+		"pk": 10,
+		"fields": {
+			"app_label": "river",
+			"model": "ontransithook"
+		}
+	},
+	{
+		"model": "contenttypes.contenttype",
+		"pk": 11,
+		"fields": {
+			"app_label": "river",
+			"model": "state"
+		}
+	},
+	{
+		"model": "contenttypes.contenttype",
+		"pk": 12,
+		"fields": {
+			"app_label": "river",
+			"model": "transition"
+		}
+	},
+	{
+		"model": "contenttypes.contenttype",
+		"pk": 13,
+		"fields": {
+			"app_label": "river",
+			"model": "transitionapproval"
+		}
+	},
+	{
+		"model": "contenttypes.contenttype",
+		"pk": 14,
+		"fields": {
+			"app_label": "river",
+			"model": "transitionapprovalmeta"
+		}
+	},
+	{
+		"model": "contenttypes.contenttype",
+		"pk": 15,
+		"fields": {
+			"app_label": "river",
+			"model": "transitionmeta"
+		}
+	},
+	{
+		"model": "contenttypes.contenttype",
+		"pk": 16,
+		"fields": {
+			"app_label": "river",
+			"model": "workflow"
+		}
+	},
+	{
+		"model": "contenttypes.contenttype",
+		"pk": 17,
+		"fields": {
+			"app_label": "djangorealidm",
+			"model": "group"
+		}
+	},
+	{
+		"model": "contenttypes.contenttype",
+		"pk": 18,
+		"fields": {
+			"app_label": "djangorealidm",
+			"model": "user"
+		}
+	},
+	{
+		"model": "contenttypes.contenttype",
+		"pk": 19,
+		"fields": {
+			"app_label": "djangorealidm",
+			"model": "role"
+		}
+	},
+	{
+		"model": "contenttypes.contenttype",
+		"pk": 20,
+		"fields": {
+			"app_label": "djangorealidm",
+			"model": "grant"
+		}
+	},
+	{
+		"model": "river.state",
+		"pk": 1,
+		"fields": {
+			"date_created": "2021-04-07T18:48:39.487Z",
+			"date_updated": "2021-04-09T19:39:13.226Z",
+			"slug": "needs-approval",
+			"label": "Needs approval",
+			"description": null
+		}
+	},
+	{
+		"model": "river.state",
+		"pk": 2,
+		"fields": {
+			"date_created": "2021-04-07T18:48:50.542Z",
+			"date_updated": "2021-04-07T18:48:50.542Z",
+			"slug": "approved",
+			"label": "Approved",
+			"description": null
+		}
+	},
+	{
+		"model": "river.state",
+		"pk": 3,
+		"fields": {
+			"date_created": "2021-04-07T19:21:55.813Z",
+			"date_updated": "2021-04-07T19:21:55.813Z",
+			"slug": "disabled",
+			"label": "Disabled",
+			"description": "Disabled after being approved (e.g. due to leave)"
+		}
+	},
+	{
+		"model": "river.workflow",
+		"pk": 1,
+		"fields": {
+			"date_created": "2021-04-07T18:48:58.055Z",
+			"date_updated": "2021-04-09T19:39:33.428Z",
+			"content_type": 20,
+			"field_name": "status",
+			"initial_state": 1
+		}
+	},
+	{
+		"model": "river.transitionmeta",
+		"pk": 1,
+		"fields": {
+			"date_created": "2021-04-07T18:49:06.291Z",
+			"date_updated": "2021-04-07T18:49:06.291Z",
+			"workflow": 1,
+			"source_state": 1,
+			"destination_state": 2
+		}
+	},
+	{
+		"model": "river.transitionmeta",
+		"pk": 2,
+		"fields": {
+			"date_created": "2021-04-07T19:24:35.121Z",
+			"date_updated": "2021-04-07T19:24:35.121Z",
+			"workflow": 1,
+			"source_state": 2,
+			"destination_state": 3
+		}
+	},
+	{
+		"model": "river.transitionapprovalmeta",
+		"pk": 1,
+		"fields": {
+			"date_created": "2021-04-07T18:49:25.471Z",
+			"date_updated": "2021-04-07T18:49:31.980Z",
+			"workflow": 1,
+			"transition_meta": 1,
+			"priority": 1,
+			"permissions": [],
+			"groups": [
+				1
+			],
+			"parents": []
+		}
+	},
+	{
+		"model": "river.transitionapprovalmeta",
+		"pk": 2,
+		"fields": {
+			"date_created": "2021-04-07T19:24:46.972Z",
+			"date_updated": "2021-04-07T19:24:46.972Z",
+			"workflow": 1,
+			"transition_meta": 2,
+			"priority": 1,
+			"permissions": [],
+			"groups": [
+				1
+			],
+			"parents": [
+				1
+			]
+		}
+	},
+	{
+		"model": "djangorealidm.group",
+		"pk": 1,
+		"fields": {
+			"name": "group1",
+			"description": ""
+		}
+	},
+	{
+		"model": "djangorealidm.group",
+		"pk": 2,
+		"fields": {
+			"name": "group2",
+			"description": ""
+		}
+	},
+	{
+		"model": "djangorealidm.group",
+		"pk": 3,
+		"fields": {
+			"name": "group3",
+			"description": ""
+		}
+	},
+	{
+		"model": "djangorealidm.group",
+		"pk": 4,
+		"fields": {
+			"name": "group4",
+			"description": ""
+		}
+	},
+	{
+		"model": "djangorealidm.user",
+		"pk": 1,
+		"fields": {
+			"username": "user1"
+		}
+	},
+	{
+		"model": "djangorealidm.user",
+		"pk": 2,
+		"fields": {
+			"username": "user2"
+		}
+	},
+	{
+		"model": "djangorealidm.role",
+		"pk": 1,
+		"fields": {
+			"name": "role1",
+			"description": "",
+			"groups": [
+				1,
+				2
+			]
+		}
+	}
+]

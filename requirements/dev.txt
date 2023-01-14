@@ -1,0 +1,6 @@
+Django
+django-river
+six
+django-codemirror2
+ldap3
+river-admin

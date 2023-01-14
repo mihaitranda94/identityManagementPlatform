@@ -1,0 +1,32 @@
+{% extends 'djangorealidm/base.html' %}
+{% block content %}
+
+
+{% if grant_list %}
+<table class="table" style="width:100%">
+      <thead>
+  <tr>
+    <th>Username</th>
+    <th>Group</th>
+      <th>Role</th>
+    <th>Status</th>
+    <th>Last status approved by</th>
+      <th>Approval datetime</th>
+  </tr>
+      </thead>
+    {% for grant in grant_list %}
+        <tr>
+            <td>{{grant.grant.user}}</td>
+            <td>{{grant.grant.group}}</td>
+            <td>{{grant.grant.role}}</td>
+            <td>{{grant.grant.status.slug}}</td>
+            <td>{{grant.approver}}</td>
+            <td>{{grant.last_approved}}</td>
+        </tr>
+    {% endfor %}
+</table>
+{% else %}
+    <p>No data are available.</p>
+{% endif %}
+<a href="{% url 'basic-report' %}?csv=true">Download as CSV</a>
+{% endblock %}

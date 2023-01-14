@@ -1,0 +1,13 @@
+version: '3.4'
+
+services:
+  djangorealopenidmdemo:
+    image: djangorealopenidmdemo
+    container-name: djangorealopenidmdemo
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    volumes:
+      - ./db/:/home/web/idmdemo/db/
+    ports:
+      - 8000:8000
